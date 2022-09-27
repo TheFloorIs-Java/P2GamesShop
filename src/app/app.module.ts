@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { AllTransactionsComponent } from './pages/all-transactions/all-transactions.component';
+import { TransactionViewComponent } from './components/transaction-view/transaction-view.component';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransactionsComponent
+    AllTransactionsComponent,
+    TransactionViewComponent,
+    TransactionListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

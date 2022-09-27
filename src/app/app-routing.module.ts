@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { AllTransactionsComponent } from './pages/all-transactions/all-transactions.component';
 
 const routes: Routes = [
-  {path:"transactions", component:TransactionsComponent}
+  {path:"transactions", component:AllTransactionsComponent}
 ];
 
 @NgModule({
