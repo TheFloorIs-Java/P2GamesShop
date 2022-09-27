@@ -1,2 +1,6 @@
-<button>View All Transactions</button>
-<p>transactions works!</p>
+<button (click)=onViewAllButtonClicked()>View All Transactions</button>
+<div *ngIf="viewAllButtonPressed">
+    <h2>All Transactions</h2>
+
+</div>
+
