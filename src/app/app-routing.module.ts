@@ -4,9 +4,10 @@ import {LoginComponent}  from  './pages/login/login/login.component'
 import {AccountManagementComponent} from './pages/admin/account-management/account-management.component'
 
 
-const routes: Routes  = [
+const routes: Routes  = [ 
   { path: 'login', component: LoginComponent },
-  { path: 'account', component: AccountManagementComponent }
+  { path: 'account', component: AccountManagementComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full'}
  
 ];
 @NgModule({

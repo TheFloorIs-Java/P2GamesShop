@@ -1,6 +1,6 @@
 import { Component, OnInit , Input} from '@angular/core';
- import {UsersService} from 'src/app/services/users.service';
- import {users} from 'src/app/models/users' ;
+import {UsersService} from 'src/app/services/users.service';
+import {users} from 'src/app/models/users' ;
 import { Router } from '@angular/router';
  
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     //this.userName = this.userlog['userRole'];
     
      
-     this._router.navigate(['/account']);
+    //this._router.navigate(['/account']);
     
 
     
