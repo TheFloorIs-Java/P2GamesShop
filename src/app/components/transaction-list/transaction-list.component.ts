@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+import { Transaction } from 'src/app/models/Transaction';
+import { TransactionService } from 'src/app/services/TransactionService';
+
+@Component({
+  selector: 'app-transaction-list',
+  templateUrl: './transaction-list.component.html',
+  styleUrls: ['./transaction-list.component.css']
+})
+export class TransactionListComponent implements OnInit {
+  transactions : Array<Transaction> = [];
+
+  constructor(private tservice : TransactionService) { 
+  }
+
+  ngOnInit(): void {
+    this.tservice.getAllTransactions().subscribe(data => this.transactions = data);
+  }
+
+}
