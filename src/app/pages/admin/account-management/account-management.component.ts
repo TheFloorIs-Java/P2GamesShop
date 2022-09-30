@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {UsersService} from 'src/app/services/users.service';
+import {UserService} from 'src/app/services/user.service';
 import {User} from 'src/app/models/User' ;
 import {  VERSION, ViewChild, ElementRef } from '@angular/core';
 
@@ -23,7 +23,7 @@ export class AccountManagementComponent implements OnInit {
    selectedValue:any;
    
    
-  constructor(private userSer : UsersService) { }
+  constructor(private userSer : UserService) { }
 
   ngOnInit(): void {
     this.isValid= true;
