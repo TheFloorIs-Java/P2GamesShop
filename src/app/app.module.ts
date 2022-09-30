@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { AllTransactionsComponent } from './pages/all-transactions/all-transactions.component';
 import { TransactionViewComponent } from './components/transaction-view/transaction-view.component';
 import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AccountManagementComponent } from './pages/admin/account-management/account-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllTransactionsComponent,
     TransactionViewComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    LoginComponent,
+    AccountManagementComponent
   ],
   imports: [
     BrowserModule,
