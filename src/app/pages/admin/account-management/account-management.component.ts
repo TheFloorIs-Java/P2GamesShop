@@ -6,7 +6,7 @@ import {  VERSION, ViewChild, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-account-management',
   templateUrl: './account-management.component.html',
-  styleUrls: ['./account-management.component.scss']
+  styleUrls: ['./account-management.component.css']
 })
 export class AccountManagementComponent implements OnInit {
   idNum : number = 0;
