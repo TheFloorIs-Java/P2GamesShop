@@ -1,0 +1,59 @@
+
+<div  >
+    <div class = "headercolumn"  style = "vertical-align: middle;">
+        <h2 > Games Shop</h2>
+    </div>
+   
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+
+    <div class="column"  style="background-color:#aaa;"  >
+         <!-- Users -->
+        <div class="row1"  style="background-color:#bbb;">
+            <label for="userName">User Name:</label>
+            <input type="text" [(ngModel)] = "userName" ><br><br>
+        
+            <label for="password"> Password&nbsp;&nbsp;  :</label>
+            <input type="text" [(ngModel)] ="password"><br><br>
+
+            <label for="userRole"> User Role&nbsp;&nbsp;  :</label>
+            <input type="text" [(ngModel)]="userRole">
+            <input type="text" [(ngModel)]="idNumber">
+            <br><br>
+        </div>
+        <br> 
+        <div class="row2"  style="background-color:#bbb;">
+            <button class ="button" id="addUserButton"  (click)="addUser()" width="15">Add User</button>
+            <button class ="button" id="deleteUser" (click)="deleteUser()" width="15">Delete User</button>
+            
+
+        </div>
+        <br>
+        
+        <a href="index.html"> Go Back </a> 
+        <span id="container"></span>
+    </div>
+
+    <div class="column"  style="background-color:#aaa;" style="vertical-align:middle" >
+        <!--  -->
+        <div  class = "row2-column"  style="background-color:#bbb;">
+            
+            
+            
+                <select  *ngIf="isValid"  class="combo" id="users" (click)="getUserById()" [(ngModel)]="selectedValue"  multiple>
+                <option   *ngFor = "let us of userArray" value = {{us.id}}  >  {{us.userName}}  </option>
+           
+                </select>
+                
+           
+            </div> 
+            
+         <!--  -->
+        
+    </div>
+</div> 
+<!-- New row -->
