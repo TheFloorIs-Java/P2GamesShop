@@ -9,6 +9,8 @@ import { TransactionViewComponent } from './components/transaction-view/transact
 import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AccountManagementComponent } from './pages/admin/account-management/account-management.component';
+import { TopnavComponent } from './components/topnav/topnav.component';
+import { HomeComponent } from './pages/admin/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AccountManagementComponent } from './pages/admin/account-management/acc
     TransactionViewComponent,
     TransactionListComponent,
     LoginComponent,
-    AccountManagementComponent
+    AccountManagementComponent,
+    TopnavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
