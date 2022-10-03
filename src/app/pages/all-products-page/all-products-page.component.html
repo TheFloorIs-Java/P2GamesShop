@@ -1,0 +1,10 @@
+<div *ngFor="let product of placeholderProducts">
+  <app-product-card
+    [product_id]="product.product_id"
+    [product_name]="product.product_name"
+    [release_date]="product.release_date"
+    [price]="product.price"
+    [quantity]="product.quantity"
+    [product_img]="product.product_img"
+  ></app-product-card>
+</div>
