@@ -21,15 +21,15 @@ export class UserService {
 
   }
 
-  getUser( userName:String , password:String) : Observable<User> {
+  getUser( userName:String) : Observable<User> {
     
-    return this.http.get<User>("http://localhost:9000/iceCreamShop/getLogging/"+ userName + "," + password);
+    return this.http.get<User>("http://p2gamesstore.azurewebsites.net:8080/user/"+ userName);
       
 
   }
   
   getAllUsers()  : Observable<Array<User>>{
-    return this.http.get<User[]>("http://localhost:9000/iceCreamShop/users/");
+    return this.http.get<User[]>("http://p2gamesstore.azurewebsites.net:8080/users/");
     
   }
 

@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AccountManagementComponent } from './pages/admin/account-management/account-management.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
 import { HomeComponent } from './pages/admin/home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './pages/admin/home/home.component';
     LoginComponent,
     AccountManagementComponent,
     TopnavComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
