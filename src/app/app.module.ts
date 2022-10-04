@@ -11,6 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { AccountManagementComponent } from './pages/admin/account-management/account-management.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
 import { HomeComponent } from './pages/admin/home/home.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { AllProductsPageComponent } from './pages/all-products-page/all-products-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HomeComponent } from './pages/admin/home/home.component';
     LoginComponent,
     AccountManagementComponent,
     TopnavComponent,
-    HomeComponent
+    HomeComponent,
+    ProductCardComponent,
+    AllProductsPageComponent
   ],
   imports: [
     BrowserModule,
