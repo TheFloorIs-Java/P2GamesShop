@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   userRole:string= "";
 
   
-  constructor( private userSer : UserService, private secService: SecurityService, private router: Router,) { }
+  constructor( private userSer : UserService, private secService: SecurityService, private router: Router) { }
   userList : Array<User>=[];
   
 

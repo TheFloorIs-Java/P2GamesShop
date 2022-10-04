@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class SecurityService {
 
   private verified : boolean;
 
-  constructor() { 
+  constructor(private router : Router) { 
     this.verified = false;
   }
 
@@ -23,5 +24,12 @@ export class SecurityService {
 
   securityCheck() : boolean {
     return this.verified;
+  }
+
+  fullCheck() : void {
+    if(!this.securityCheck()) {
+      alert("You must be logged in to view this page.");
+      this.router.navigateByUrl("login");
+    }
   }
 }
