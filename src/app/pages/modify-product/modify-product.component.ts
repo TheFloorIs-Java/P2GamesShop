@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
@@ -8,11 +8,17 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class ModifyProductComponent implements OnInit {
 
-  product_id: number = 0;
+  @Input()
+  product_id: any = "";
+  @Input()
   product_name: string = "";
-  release_date: number = 0;
-  price: number = 0;
-  quantity: number = 0;
+  @Input()
+  release_date: any = "";
+  @Input()
+  price: any = "";
+  @Input()
+  quantity: any = "";
+  @Input()
   product_img: string = ""
 
   constructor(private http: HttpClient) { }
@@ -22,6 +28,11 @@ export class ModifyProductComponent implements OnInit {
 
   postProduct() {
     console.log(this.product_id)
+    console.log(this.product_name)
+    console.log(this.release_date)
+    console.log(this.price)
+    console.log(this.quantity)
+    console.log(this.product_img)
 
     this.http.post("https://p2gamesstore.azurewebsites.net/products",
       {
