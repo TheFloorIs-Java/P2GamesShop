@@ -17,8 +17,10 @@ export class TransactionService {
     }
 
     // getAllTransactionsFromUser
-    getAllTransactionsFromUser() : Observable<Array<Transaction>> {
+    getAllTransactionsFromUser(user_id:number) : Observable<Array<Transaction>> {
         // https://p2gamesstore.azurewebsites.net/{username/user_id}/transactions
-        return this.http.get<Array<Transaction>>("");
+        return this.http.get<Array<Transaction>>("https://p2gamesstore.azurewebsites.net/" + user_id +"/transactions");
     }
+
+
 }
