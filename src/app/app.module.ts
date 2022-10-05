@@ -14,6 +14,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { AllProductsPageComponent } from './pages/all-products-page/all-products-page.component';
 import { ModifyProductComponent } from './pages/modify-product/modify-product.component';
 import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http
     AccountManagementComponent,
     TopnavComponent,
     HomeComponent,
+    RegisterComponent,
     ProductCardComponent,
     AllProductsPageComponent,
     ModifyProductComponent

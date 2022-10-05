@@ -38,8 +38,7 @@ export class AccountManagementComponent implements OnInit {
     
     //this.id = 1;
    //id : this.usersCom.options[this.usersCom.selectedIndex].value;
-    this.userSer.getUserById(this.selectedValue).subscribe(data=> {this.idNumber = data.id, this.userName = data.userName, this.password = data.password , this.userRole = data.userRole; console.log()});
-   alert(this.userName);
+    this.userSer.getUserById(this.selectedValue).subscribe(data=> {this.idNumber = data.id, this.userName = data.username, this.password = data.password , this.userRole = data.userRole; console.log(this.idNumber)});
   }
 
 
@@ -52,9 +51,11 @@ export class AccountManagementComponent implements OnInit {
   }
 
   deleteUser() : void {
-    alert("jhklgjflk  " + this.selectedValue );
-   this.userSer.deleteUser(this.selectedValue).subscribe(data => {this.idNum = data}) ;
+   //this.userSer.deleteUser(this.selectedValue).subscribe(data => {this.idNum = data}) ;
+   console.log(this.idNumber);
+   this.userSer.deleteUser(this.idNumber).subscribe(() => console.log("user deleted"));
     this.clearUserInputs();
+    this.getAllUsers();
   }
 
   clearUserInputs() : void {
@@ -66,7 +67,7 @@ export class AccountManagementComponent implements OnInit {
 
  getAllUsers() : void {
   this.isValid= false;
-  this.userSer.getAllUsers().subscribe(data => {this.userArray = data; console.log(this.userArray[0].userName);});
+  this.userSer.getAllUsers().subscribe(data => {this.userArray = data; console.log(this.userArray[0].username);});
   this.isValid= true;
  }
 

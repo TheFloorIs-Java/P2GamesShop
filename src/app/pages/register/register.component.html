@@ -13,7 +13,7 @@
 <div class="row">
     
     <div class="column"  style="background-color:#aaa;">
-        <p>Any game you want is just a click away!</p>
+        <p>Create a new account!</p>
         <!-- a tag that is inline - doesn't generate new lines -->
         <div class="row1"  style="background-color:#bbb;">
             <label for="userName">User Name: </label>
@@ -25,12 +25,12 @@
         </div>
         <br> 
         <div class="row2"  style="background-color:#bbb;">
-            <button class ="button" id="logInButton"  width="15" (click)="loginAttempt()">Login</button>
+            <button class ="button" id="RegisterButton"  width="15" (click)="registerAttempt()">Register</button>
            
 
         </div>
         <br>
-        <a [routerLink]="'/register'">New here? Make a new account!</a>
+        <a [routerLink]="'/login'">Back to Login</a>
 
         <span  >{{userRole}}</span>
 
@@ -43,5 +43,4 @@
     </div>
 
 </div>
-
 
