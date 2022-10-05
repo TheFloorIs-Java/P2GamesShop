@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 export class SecurityService {
   loggedUser : string="";
   loggedID : number=0;
+  loggedFlag : string="";
 
   private verified : boolean;
 
@@ -29,6 +30,13 @@ export class SecurityService {
   fullCheck() : void {
     if(!this.securityCheck()) {
       alert("You must be logged in to view this page.");
+      this.router.navigateByUrl("login");
+    }
+  }
+
+  adminCheck() : void {
+    if(!this.securityCheck() || this.loggedFlag != "1") {
+      alert("You must be logged in as an Administrator to view this page.");
       this.router.navigateByUrl("login");
     }
   }

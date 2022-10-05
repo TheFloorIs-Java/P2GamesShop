@@ -6,7 +6,8 @@ import { AllTransactionsComponent } from './pages/all-transactions/all-transacti
 import { AccountManagementComponent } from './pages/admin/account-management/account-management.component';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { ModifyProductComponent } from './pages/modify-product/modify-product.component';
-//import { AllProductsPageComponent } from './pages/all-products-page/all-products-page.component';
+import { AllProductsPageComponent } from './pages/all-products-page/all-products-page.component';
+import { UHomeComponent } from './pages/user/home/home.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: "products", component: ModifyProductComponent },
   { path: "transactions", component: AllTransactionsComponent },
   { path: "account", component: AccountManagementComponent },
-  //{ path: "products", component: AllProductsPageComponent},
+  { path: "user/home", component: UHomeComponent},
+  { path: "allproducts", component: AllProductsPageComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
