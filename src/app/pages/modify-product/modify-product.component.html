@@ -1,0 +1,27 @@
+<h2>Modify Porduct Here</h2>
+
+Product ID:
+<input type="text" [(ngModel)]="product_id" />
+<br />
+<br />
+Product Name:
+<input type="text" [(ngModel)]="product_name" />
+<br />
+<br />
+Release Date:
+<input type="text" [(ngModel)]="release_date" />
+<br />
+<br />
+Price: <input type="text" [(ngModel)]="price" />
+<br />
+<br />
+Quantity: <input type="text" [(ngModel)]="quantity" />>
+<br />
+<br />
+Product Image: <input type="text" [(ngModel)]="product_img" />
+<br />
+<br />
+
+<button (click)="postProduct()">Add Product</button>
+<button (click)="getProduct()">Get Product</button>
+<button (click)="deleteProduct()">Delete Product</button>

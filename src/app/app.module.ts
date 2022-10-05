@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +12,8 @@ import { TopnavComponent } from './components/topnav/topnav.component';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { AllProductsPageComponent } from './pages/all-products-page/all-products-page.component';
+import { ModifyProductComponent } from './pages/modify-product/modify-product.component';
+import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AllProductsPageComponent } from './pages/all-products-page/all-products
     TopnavComponent,
     HomeComponent,
     ProductCardComponent,
-    AllProductsPageComponent
+    AllProductsPageComponent,
+    ModifyProductComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,11 @@ import { AllProductsPageComponent } from './pages/all-products-page/all-products
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    HttpClientModule,
+    HttpResponse
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
