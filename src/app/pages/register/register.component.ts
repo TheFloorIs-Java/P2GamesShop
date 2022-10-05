@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   registerAttempt(): void {
     let userExists : boolean = false;
     for(let i=0; i<this.userList.length; i++) {
-      if(this.userName==this.userList[i].userName) {
+      if(this.userName==this.userList[i].username) {
         userExists = true;
         alert("Sorry, this username is already taken, try something else.");
       }

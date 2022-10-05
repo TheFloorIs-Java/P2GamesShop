@@ -31,15 +31,18 @@ export class LoginComponent implements OnInit {
 
   loginAttempt(): void {
     
-   
-    alert("bbbbb" + this.userName);
-   this.userSer.getUser(this.userName).subscribe(data => { this.userRole = data.userRole;console.log(data)} )
+   console.log(this.userList);
+   console.log(this.userName);
+   console.log(this.password);
+   console.log(this.userList[0].password);
+
 
    let userFound = false;
 
    for(let i=0; i<this.userList.length; i++) {
-    if(this.userName==this.userList[i].userName && this.password==this.userList[i].password) {
-      this.secService.loggedUser = this.userList[i].userName;
+    if(this.userName==this.userList[i].username && this.password==this.userList[i].password) {
+      console.log("ping");
+      this.secService.loggedUser = this.userList[i].username;
       this.secService.loggedID = this.userList[i].id;
       this.secService.logIn();
       userFound = true;
@@ -53,16 +56,7 @@ export class LoginComponent implements OnInit {
    if(!userFound) {
     alert("This account does not exist, please check your credentials and try again.");
    }
-    
-    //alert("jhgfhkj " + name );
-    //this.userName = this.userlog['userRole'];
-    
-     
-    //this._router.navigate(['/account']);
-    
-
-    
+  
   }
-
  
 }
