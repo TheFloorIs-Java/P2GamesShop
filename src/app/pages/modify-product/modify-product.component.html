@@ -16,13 +16,13 @@ Product Name:
 <br />
 <br />
 Release Date:
-<input type="text" [(ngModel)]="release_date" />
+<input type="number" [(ngModel)]="release_date" />
 <br />
 <br />
-Price: <input type="text" [(ngModel)]="price" />
+Price: <input type="number" [(ngModel)]="price" />
 <br />
 <br />
-Quantity: <input type="text" [(ngModel)]="quantity" />
+Quantity: <input type="number" [(ngModel)]="quantity" />
 <br />
 <br />
 Product Image: <input type="text" [(ngModel)]="product_img" />
@@ -32,7 +32,7 @@ Product Image: <input type="text" [(ngModel)]="product_img" />
 <button (click)="getProduct()">View Product</button>
 <br />
 <br />
-<button (click)="postProduct()">Add Product</button>
+<button (click)="addProduct()">Add Product</button>
 <br />
 <br />
 <button (click)="updateProduct()">Update Product</button>

@@ -24,9 +24,10 @@ export class ModifyProductComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+
   }
 
-  postProduct() {
+  addProduct(): void {
     console.log(this.product_id)
     console.log(this.product_name)
     console.log(this.release_date)
@@ -44,13 +45,13 @@ export class ModifyProductComponent implements OnInit {
         product_img: this.product_img
       }
 
-    )
+    ).subscribe(data => console.log(data))
     // this.product_id = ""; //trying to create a blank box after entering data
 
 
   }
 
-  getProduct() {
+  getProduct(): void {
     this.http.get<any>("https://p2gamesstore.azurewebsites.net/products")
       .subscribe(data => {
         console.log(data)
@@ -66,7 +67,7 @@ export class ModifyProductComponent implements OnInit {
 
   }
 
-  deleteProduct() {
+  deleteProduct(): void {
     console.log(this.product_id)
 
     this.http.request("delete", "https://p2gamesstore.azurewebsites.net/products",
@@ -84,8 +85,8 @@ export class ModifyProductComponent implements OnInit {
 
   }
 
-  updateProduct() {
-    this.http.put("https://p2gamesstore.azurewebsites.net/products",
+  updateProduct(): void {
+    this.http.put<any>("https://p2gamesstore.azurewebsites.net/products",
       {
         product_id: this.product_id,
         product_name: this.product_name,
