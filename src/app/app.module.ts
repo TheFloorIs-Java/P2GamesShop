@@ -16,6 +16,7 @@ import { ModifyProductComponent } from './pages/modify-product/modify-product.co
 import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 import { RegisterComponent } from './pages/register/register.component';
 import { UsernavComponent } from './components/usernav/usernav.component';
+import { UhomeComponent } from './pages/user/uhome/uhome.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UsernavComponent } from './components/usernav/usernav.component';
     ProductCardComponent,
     AllProductsPageComponent,
     ModifyProductComponent,
-    UsernavComponent
+    UsernavComponent,
+    UhomeComponent
   ],
   imports: [
     BrowserModule,
