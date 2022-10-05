@@ -84,4 +84,18 @@ export class ModifyProductComponent implements OnInit {
 
   }
 
+  updateProduct() {
+    this.http.put("https://p2gamesstore.azurewebsites.net/products",
+      {
+        product_id: this.product_id,
+        product_name: this.product_name,
+        release_date: this.release_date,
+        price: this.price,
+        quantity: this.quantity,
+        product_img: this.product_img
+      }
+
+    )
+  }
+
 }

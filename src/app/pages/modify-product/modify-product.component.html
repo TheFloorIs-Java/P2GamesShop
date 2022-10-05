@@ -1,6 +1,11 @@
 <app-topnav></app-topnav>
+<div>
+  <div class="headercolumn" style="vertical-align: middle">
+    <h2>Modify Product Here</h2>
+  </div>
+</div>
 
-<h2>Modify Product Here</h2>
+<h4>Here you can add, delete, update, or view user</h4>
 
 Product ID:
 <input type="text" [(ngModel)]="product_id" />
@@ -24,6 +29,13 @@ Product Image: <input type="text" [(ngModel)]="product_img" />
 <br />
 <br />
 
+<button (click)="getProduct()">View Product</button>
+<br />
+<br />
 <button (click)="postProduct()">Add Product</button>
-<button (click)="getProduct()">Get Product</button>
+<br />
+<br />
+<button (click)="updateProduct()">Update Product</button>
+<br />
+<br />
 <button (click)="deleteProduct()">Delete Product</button>
