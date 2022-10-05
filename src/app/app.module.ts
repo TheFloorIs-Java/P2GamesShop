@@ -1,26 +1,45 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllTransactionsComponent } from './pages/all-transactions/all-transactions.component';
 import { TransactionViewComponent } from './components/transaction-view/transaction-view.component';
 import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AccountManagementComponent } from './pages/admin/account-management/account-management.component';
+import { TopnavComponent } from './components/topnav/topnav.component';
+import { HomeComponent } from './pages/admin/home/home.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { AllProductsPageComponent } from './pages/all-products-page/all-products-page.component';
+import { ModifyProductComponent } from './pages/modify-product/modify-product.component';
+import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllTransactionsComponent,
     TransactionViewComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    LoginComponent,
+    AccountManagementComponent,
+    TopnavComponent,
+    HomeComponent,
+    ProductCardComponent,
+    AllProductsPageComponent,
+    ModifyProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    HttpClientModule,
+    HttpResponse
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

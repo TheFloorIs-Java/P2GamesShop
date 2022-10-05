@@ -1,0 +1,45 @@
+<div  >
+    <div class = "headercolumn"  style = "vertical-align: middle;">
+        <h2 > Games Shop</h2>
+    </div>
+    <div class = "headercolumn" class=" bottom" style ="text-align: right;" >
+     <p>        
+    </p>
+    </div>
+</div>
+
+  <br>   
+        
+<div class="row">
+    
+    <div class="column"  style="background-color:#aaa;">
+        <p>Log in</p>
+        <!-- a tag that is inline - doesn't generate new lines -->
+        <div class="row1"  style="background-color:#bbb;">
+            <label for="userName">User Name: </label>
+            <input type="text"  [(ngModel)]="userName" ><br><br>
+        
+            <label for="password"> Password&nbsp;&nbsp;: </label>
+            <input type="password"  [(ngModel)]="password"><br><br>
+            
+        </div>
+        <br> 
+        <div class="row2"  style="background-color:#bbb;">
+            <button class ="button" id="logInButton"  width="15" (click)="getUser()">log in</button>
+           
+
+        </div>
+
+        <span  >{{userRole}}</span>
+
+    </div><a [routerLink]="'/account'">Account</a>
+   
+
+    <div class="column"  style="background-color:#bbb;" style="vertical-align:middle" >
+     <img src = "../assets/games.jpg"
+         alt = "games22" width="940" height="700" /> 
+    </div>
+
+</div>
+
+

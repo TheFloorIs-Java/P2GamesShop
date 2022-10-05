@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "GamesShop": {
+    "P2GamesShop": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/games-shop",
+            "outputPath": "dist/P2GamesShop",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "GamesShop:build:production"
+              "browserTarget": "P2GamesShop:build:production"
             },
             "development": {
-              "browserTarget": "GamesShop:build:development"
+              "browserTarget": "P2GamesShop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "GamesShop:build"
+            "browserTarget": "P2GamesShop:build"
           }
         },
         "test": {
