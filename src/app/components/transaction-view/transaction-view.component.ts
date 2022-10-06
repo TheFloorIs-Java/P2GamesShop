@@ -9,7 +9,7 @@ import { TransactionService } from 'src/app/services/TransactionService';
 })
 export class TransactionViewComponent implements OnInit {
   @Input()
-  transaction : Transaction = {id:0, item:""};
+  transaction : Transaction = {transaction_id:0, user_id: 0, total_price:0, products:"", date:new Date("2022-10-06")};
 
   constructor(private tservice : TransactionService) { }
 

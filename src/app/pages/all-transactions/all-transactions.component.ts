@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-all-transactions',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class AllTransactionsComponent implements OnInit {
   viewAllButtonClicked : boolean = false;
 
-  constructor() { }
+  constructor(private securityService: SecurityService) { 
+    this.securityService.adminCheck();
+  }
 
   ngOnInit(): void {
   }
