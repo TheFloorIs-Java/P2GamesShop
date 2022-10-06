@@ -27,6 +27,7 @@ export class ModifyProductComponent implements OnInit {
   productList : Array<Product>=[];
 
   ngOnInit(): void {
+    this.secService.adminCheck();
     this.proService.getAllProducts().subscribe(data=>this.productList=data);
   }
 

@@ -10,10 +10,10 @@ export class AllTransactionsComponent implements OnInit {
   viewAllButtonClicked : boolean = false;
 
   constructor(private securityService: SecurityService) { 
-    this.securityService.adminCheck();
   }
 
   ngOnInit(): void {
+    this.securityService.adminCheck();
   }
 
   onViewAllButtonClicked() : void {

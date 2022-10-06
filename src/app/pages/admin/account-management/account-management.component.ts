@@ -3,7 +3,6 @@ import {UserService} from 'src/app/services/user.service';
 import {User} from 'src/app/models/User' ;
 import { SecurityService } from 'src/app/services/security.service';
 import {  VERSION, ViewChild, ElementRef } from '@angular/core';
-import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-account-management',
