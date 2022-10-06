@@ -23,7 +23,7 @@ export class TransactionService {
     }
 
     // Get all transaction on specified date
-    getAllTransactionsByDate(date:Date) : Observable<Array<Transaction>> {
+    getAllTransactionsByDate(date:String) : Observable<Array<Transaction>> {
         return this.http.get<Array<Transaction>>("https://p2gamesstore.azurewebsites.net/transactions/" + date);
     }
 }
