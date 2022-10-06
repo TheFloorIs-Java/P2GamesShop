@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Product';
 import { SecurityService } from 'src/app/services/security.service';
@@ -46,6 +46,7 @@ export class ModifyProductComponent implements OnInit {
         this.proService.addProduct(this.product_id, this.product_name, this.release_date, this.price, this.quantity, this.product_img);
         alert("New product added!");
         this.proService.getAllProducts().subscribe(data=>this.productList=data);
+        window.location.reload();
         
 
   }
@@ -63,6 +64,7 @@ deleteProduct(): void {
         this.proService.deleteProduct(this.product_id).subscribe(() => console.log("product deleted"));
         this.proService.getAllProducts().subscribe(data=>this.productList=data);
         alert("Product deleted!");
+        window.location.reload();
       }
       else{ 
         alert("No product with that ID was found.")
@@ -81,10 +83,15 @@ updateProduct(): void {
         this.proService.updateProduct(this.product_id, this.product_name, this.release_date, this.price, this.quantity, this.product_img);
         this.proService.getAllProducts().subscribe(data=>this.productList=data);
         alert("Product updated!");
+        window.location.reload();
   } else{
     alert("No product with that ID was found.")
   }
 }
+
+/*ngOnChanges(changes: SimpleChanges) {
+  this.proService.getAllProducts().subscribe(data=>this.productList=data);
+}*/
   }
 
  

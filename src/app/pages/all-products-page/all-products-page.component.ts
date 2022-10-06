@@ -15,7 +15,7 @@ export class AllProductsPageComponent implements OnInit {
 
   // will use interface to export a structure of a certrain piece of data... from array (product)
   //in future will get data from API here, so this serves as a place holder for now
-  placeholderProducts : Array<Product> = [
+ /* placeholderProducts : Array<Product> = [
 
     {
       product_id: 6,
@@ -42,12 +42,11 @@ export class AllProductsPageComponent implements OnInit {
       product_img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6390/6390837_sd.jpg;maxHeight=640;maxWidth=550"
     }
 
-  ];
+  ]; */
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<Array<Product>>("https://p2gamesstore.azurewebsites.net/").subscribe(data => this.placeholderProducts = data)
 
   }
 
