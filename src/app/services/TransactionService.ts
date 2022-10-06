@@ -13,7 +13,7 @@ export class TransactionService {
 
     // Mainly for testing 
     getAllTransactions() : Observable<Array<Transaction>> {
-        return this.http.get<Array<Transaction>>("https://633335f7433198e79dc183b0.mockapi.io/transactions");
+        return this.http.get<Array<Transaction>>("https://p2gamesstore.azurewebsites.net/transactions");
     }
 
     // Get all transactions from specified user
