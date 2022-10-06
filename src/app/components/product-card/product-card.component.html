@@ -1,10 +1,12 @@
 <!--product-card represents the single product-->
 <!--(says same as first line) this is the name of the product, this file connects to 'product-card.component.ts'-->
 <!--one way: data binding allows us to bind a variable from TS to html-->
-<h3>Name: {{ product_name }}</h3>
-<img src="{{ product_img }}}" />
-<p>Release Date: {{ release_date }}</p>
+<h3>Name: {{ product.product_name }}</h3>
+<p>Product ID: {{product.product_id}}</p>
+<p>Release Date: {{ product.release_date }}</p>
+<p>Price: ${{product.price}}</p>
+<p>Current Stock: {{product.quantity}}</p>
+<img src="{{ product.product_img }}" />
 <!--Event binding: bind events from ts to html -->
-<button (click)="add()">Add to Cart</button>
 <!--Structual directive: using Angular to modify the structure of DOM on the fly -->
-<p *ngIf="added">You've add {{ product_name }}</p>
+

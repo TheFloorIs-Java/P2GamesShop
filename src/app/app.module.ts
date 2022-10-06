@@ -15,6 +15,7 @@ import { AllProductsPageComponent } from './pages/all-products-page/all-products
 import { ModifyProductComponent } from './pages/modify-product/modify-product.component';
 import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 import { UsernavComponent } from './components/usernav/usernav.component';
 import { UhomeComponent } from './pages/user/uhome/uhome.component';
 
@@ -33,7 +34,8 @@ import { UhomeComponent } from './pages/user/uhome/uhome.component';
     AllProductsPageComponent,
     ModifyProductComponent,
     UsernavComponent,
-    UhomeComponent
+    UhomeComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

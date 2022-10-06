@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
+import { Product } from 'src/app/models/Product';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-modify-product',
@@ -21,81 +23,77 @@ export class ModifyProductComponent implements OnInit {
   @Input()
   product_img: string = ""
 
-  constructor(private http: HttpClient) { }
+  constructor(private proService : ProductService, private secService : SecurityService) { }
+  productList : Array<Product>=[];
 
   ngOnInit(): void {
+    this.proService.getAllProducts().subscribe(data=>this.productList=data);
   }
 
-  postProduct() {
-    console.log(this.product_id)
-    console.log(this.product_name)
-    console.log(this.release_date)
-    console.log(this.price)
-    console.log(this.quantity)
-    console.log(this.product_img)
+  showProducts(): void {
+    console.log(this.productList);
+  }
 
-    this.http.post("https://p2gamesstore.azurewebsites.net/products",
-      {
-        product_id: this.product_id,
-        product_name: this.product_name,
-        release_date: this.release_date,
-        price: this.price,
-        quantity: this.quantity,
-        product_img: this.product_img
+  newProduct(): void {
+    let productExists : boolean = false;
+    for(let i=0; i<this.productList.length; i++) {
+      if(this.product_name==this.productList[i].product_name) {
+        productExists = true;
+        alert("This product is already in the system, if you would like to edit it use the update button.");
       }
-
-    )
-    // this.product_id = ""; //trying to create a blank box after entering data
-
-
-  }
-
-  getProduct() {
-    this.http.get<any>("https://p2gamesstore.azurewebsites.net/products")
-      .subscribe(data => {
-        console.log(data)
-        this.product_id = data.product_id, //for all the product data
-          this.product_name = data.product_name,
-          this.release_date = data.release_date,
-          this.price = data.price,
-          this.quantity = data.quantity
-
-      })
-    //making method inline without giving any data
-    //this area will need to be the model so like Product
-
-  }
-
-  deleteProduct() {
-    console.log(this.product_id)
-
-    this.http.request("delete", "https://p2gamesstore.azurewebsites.net/products",
-      //could use +id in the url and no need for the body +this.product_id
-      {
-        body: {
-          product_id: this.product_name,
-          product_name: this.product_name,
-          release_date: this.release_date,
-          price: this.price,
-          quantity: this.quantity,
-          product_img: this.product_img
-        }
-      })
-
-  }
-
-  updateProduct() {
-    this.http.put("https://p2gamesstore.azurewebsites.net/products",
-      {
-        product_id: this.product_id,
-        product_name: this.product_name,
-        release_date: this.release_date,
-        price: this.price,
-        quantity: this.quantity,
-        product_img: this.product_img
       }
+      if(!productExists) {
+        this.proService.addProduct(this.product_id, this.product_name, this.release_date, this.price, this.quantity, this.product_img);
+        alert("New product added!");
+        this.proService.getAllProducts().subscribe(data=>this.productList=data);
+        window.location.reload();
+        
 
-    )
   }
 
 }
+
+deleteProduct(): void {
+  let productExists : boolean = false;
+    for(let i=0; i<this.productList.length; i++) {
+      if(this.product_id==this.productList[i].product_id) {
+        productExists = true;
+      }
+      }
+      if(productExists){
+        this.proService.deleteProduct(this.product_id).subscribe(() => console.log("product deleted"));
+        this.proService.getAllProducts().subscribe(data=>this.productList=data);
+        alert("Product deleted!");
+        window.location.reload();
+      }
+      else{ 
+        alert("No product with that ID was found.")
+      }
+  
+}
+
+updateProduct(): void {
+  let productExists : boolean = false;
+    for(let i=0; i<this.productList.length; i++) {
+      if(this.product_id==this.productList[i].product_id) {
+        productExists = true;
+      }
+      }
+      if(productExists) {
+        this.proService.updateProduct(this.product_id, this.product_name, this.release_date, this.price, this.quantity, this.product_img);
+        this.proService.getAllProducts().subscribe(data=>this.productList=data);
+        alert("Product updated!");
+        window.location.reload();
+  } else{
+    alert("No product with that ID was found.")
+  }
+}
+
+/*ngOnChanges(changes: SimpleChanges) {
+  this.proService.getAllProducts().subscribe(data=>this.productList=data);
+}*/
+  }
+
+ 
+
+
