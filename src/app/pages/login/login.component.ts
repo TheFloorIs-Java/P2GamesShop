@@ -44,12 +44,13 @@ export class LoginComponent implements OnInit {
       console.log("ping");
       this.secService.loggedUser = this.userList[i].username;
       this.secService.loggedID = this.userList[i].id;
+      this.secService.loggedFlag = this.userList[i].userRole;
       this.secService.logIn();
       userFound = true;
       if(this.userList[i].userRole=="1") {
         this.router.navigateByUrl('admin/home');
       } else {
-        // this.router.navigateByUrl('user/home');
+        this.router.navigateByUrl('user/home');
       }
     }
    }

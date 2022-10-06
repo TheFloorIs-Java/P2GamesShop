@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 import {User} from 'src/app/models/User' ;
+import { SecurityService } from 'src/app/services/security.service';
 import {  VERSION, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
@@ -23,10 +24,11 @@ export class AccountManagementComponent implements OnInit {
    selectedValue:any;
    
    
-  constructor(private userSer : UserService) { }
+  constructor(private userSer : UserService, private secService : SecurityService) { }
 
   ngOnInit(): void {
     this.isValid= true;
+    this.secService.adminCheck();
     this.getAllUsers();
    // this.userSer.getAllUsers().subscribe(data => {this.userArray = data; console.log(this.userArray[0].userName);});
     //alert( this.userArray[0].userName)
