@@ -1,4 +1,18 @@
+<div>
+    <button (click)="onViewAllButtonClicked()">View all transactions</button>
+</div>
+<div>
+    <label>Filter by date: </label>
+    <input type="date" [(ngModel)]="date">
+    <button (click)="onDateInputButtonClicked()">Submit</button>
+</div>
+
+<div>
+    <label>Filter by user: </label>
+    <input type="number" style="width:8.65em" [(ngModel)]="user_id">
+    <button (click)="onUserInputButtonClicked()">Submit</button>
+</div>
+
 <div *ngFor = "let transaction of transactions">
     <app-transaction-view [transaction]="transaction"></app-transaction-view>
-
 </div>

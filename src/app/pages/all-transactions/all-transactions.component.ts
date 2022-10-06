@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SecurityService } from 'src/app/services/security.service';
+import { TransactionService } from 'src/app/services/TransactionService';
 
 @Component({
   selector: 'app-all-transactions',
@@ -8,16 +9,12 @@ import { SecurityService } from 'src/app/services/security.service';
 })
 export class AllTransactionsComponent implements OnInit {
   viewAllButtonClicked : boolean = false;
+  date : String = "";
 
-  constructor(private securityService: SecurityService) { 
+  constructor(private tservice: TransactionService, private securityService: SecurityService) { 
   }
 
   ngOnInit(): void {
     this.securityService.adminCheck();
   }
-
-  onViewAllButtonClicked() : void {
-    this.viewAllButtonClicked = !this.viewAllButtonClicked;
-  }
-
 }
